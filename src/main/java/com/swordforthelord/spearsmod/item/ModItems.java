@@ -1,5 +1,6 @@
 package com.swordforthelord.spearsmod.item;
 
+import com.swordforthelord.spearsmod.SpearItem;
 import com.swordforthelord.spearsmod.SpearsMod;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -35,54 +36,54 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, SpearsMod.MOD_ID);
 
-    public static final RegistryObject<SwordItem> SPEARWOOD = ITEMS.register("spearwood",
-            () -> CreateNewSwordItem(Tiers.WOOD));
+    public static final RegistryObject<SpearItem> SPEARWOOD = ITEMS.register("spearwood",
+            () -> CreateNewSpearItem(Tiers.WOOD));
 
-    public static final RegistryObject<SwordItem> SPEARSTONE = ITEMS.register("spearstone",
-            () -> CreateNewSwordItem(Tiers.STONE));
+    public static final RegistryObject<SpearItem> SPEARSTONE = ITEMS.register("spearstone",
+            () -> CreateNewSpearItem(Tiers.STONE));
 
-    public static final RegistryObject<SwordItem> SPEARCOPPER = ITEMS.register("spearcopper",
-            () -> CreateNewSwordItem(Tiers.STONE)); // NOTE: because copper isn't a tier yet
+    public static final RegistryObject<SpearItem> SPEARCOPPER = ITEMS.register("spearcopper",
+            () -> CreateNewSpearItem(Tiers.STONE)); // NOTE: because copper isn't a tier yet
 
-    public static final RegistryObject<SwordItem> SPEARIRON = ITEMS.register("speariron",
-            () -> CreateNewSwordItem(Tiers.IRON));
+    public static final RegistryObject<SpearItem> SPEARIRON = ITEMS.register("speariron",
+            () -> CreateNewSpearItem(Tiers.IRON));
 
-    public static final RegistryObject<SwordItem> SPEARDIAMOND = ITEMS.register("speardiamond",
-            () -> CreateNewSwordItem(Tiers.DIAMOND));
+    public static final RegistryObject<SpearItem> SPEARDIAMOND = ITEMS.register("speardiamond",
+            () -> CreateNewSpearItem(Tiers.DIAMOND));
 
-    public static final RegistryObject<SwordItem> SPEARGOLD = ITEMS.register("speargold",
-            () -> CreateNewSwordItem(Tiers.GOLD));
+    public static final RegistryObject<SpearItem> SPEARGOLD = ITEMS.register("speargold",
+            () -> CreateNewSpearItem(Tiers.GOLD));
 
-    public static final RegistryObject<SwordItem> SPEARNETHERITE = ITEMS.register("spearnetherite",
-            () -> CreateNewSwordItem(Tiers.NETHERITE));
+    public static final RegistryObject<SpearItem> SPEARNETHERITE = ITEMS.register("spearnetherite",
+            () -> CreateNewSpearItem(Tiers.NETHERITE));
     //endregion
 
-    private static SwordItem CreateNewSwordItem(Tiers t) {
+    private static SpearItem CreateNewSpearItem(Tiers t) {
 
         Item.Properties p = new Item.Properties().tab(CreativeModeTab.TAB_COMBAT);
-        SwordItem item = null;
+        SpearItem item = null;
         switch(t)
         {
             case WOOD:
-                item = new SwordItem(t, DamageWood, SpeedWood, p);
+                item = new SpearItem(t, DamageWood, SpeedWood, p);
                 break;
             case STONE:
-                item = new SwordItem(t, DamageStone, SpeedStone, p);
+                item = new SpearItem(t, DamageStone, SpeedStone, p);
                 break;
 //            case COPPER: // copper isn't a tier in vanilla (make my own tier?)
 //                item = new SwordItem(t, DamageCopper, SpeedCopper, p);
 //                break;
             case IRON:
-                item = new SwordItem(t, DamageIron, SpeedIron, p);
+                item = new SpearItem(t, DamageIron, SpeedIron, p);
                 break;
             case DIAMOND:
-                item = new SwordItem(t, DamageDiamond, SpeedDiamond, p);
+                item = new SpearItem(t, DamageDiamond, SpeedDiamond, p);
                 break;
             case GOLD:
-                item = new SwordItem(t, DamageGold, SpeedGold, p);
+                item = new SpearItem(t, DamageGold, SpeedGold, p);
                 break;
             case NETHERITE:
-                item = new SwordItem(t, DamageNetherite, SpeedNetherite, p);
+                item = new SpearItem(t, DamageNetherite, SpeedNetherite, p);
                 break;
             default:
                 throw new IllegalStateException("Unexpected spear tier: " + t);
