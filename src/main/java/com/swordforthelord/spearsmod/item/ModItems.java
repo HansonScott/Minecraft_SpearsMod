@@ -11,6 +11,25 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
+    //region spear values
+    private static final int DamageWood = 1;
+    private static final int DamageStone = 2;
+    private static final int DamageCopper = 3;
+    private static final int DamageIron = 4;
+    private static final int DamageGold = 5;
+    private static final int DamageDiamond = 6;
+    private static final int DamageNetherite = 7;
+
+    private static final int SpeedWood = 1;
+    private static final int SpeedStone = 1;
+    private static final int SpeedCopper = 1;
+    private static final int SpeedIron = 1;
+    private static final int SpeedGold = 1;
+    private static final int SpeedDiamond = 1;
+    private static final int SpeedNetherite = 1;
+    //endregion
+
+    //region register spear items
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, SpearsMod.MOD_ID);
 
@@ -21,7 +40,7 @@ public class ModItems {
             () -> CreateNewSwordItem(Tiers.STONE));
 
     public static final RegistryObject<SwordItem> SPEARCOPPER = ITEMS.register("spearcopper",
-            () -> CreateNewSwordItem(Tiers.STONE));
+            () -> CreateNewSwordItem(Tiers.STONE)); // NOTE: because copper isn't a tier yet
 
     public static final RegistryObject<SwordItem> SPEARIRON = ITEMS.register("speariron",
             () -> CreateNewSwordItem(Tiers.IRON));
@@ -34,23 +53,6 @@ public class ModItems {
 
     public static final RegistryObject<SwordItem> SPEARNETHERITE = ITEMS.register("spearnetherite",
             () -> CreateNewSwordItem(Tiers.NETHERITE));
-
-    //region spear values
-    private static final int DamageWood = 1;
-    private static final int DamageStone = 2;
-    //private static final int DamageCopper = 3;
-    private static final int DamageIron = 4;
-    private static final int DamageGold = 5;
-    private static final int DamageDiamond = 6;
-    private static final int DamageNetherite = 7;
-
-    private static final int SpeedWood = 1;
-    private static final int SpeedStone = 1;
-    //private static final int SpeedCopper = 1;
-    private static final int SpeedIron = 1;
-    private static final int SpeedGold = 1;
-    private static final int SpeedDiamond = 1;
-    private static final int SpeedNetherite = 1;
     //endregion
 
     private static SwordItem CreateNewSwordItem(Tiers t) {
@@ -65,7 +67,7 @@ public class ModItems {
             case STONE:
                 item = new SwordItem(t, DamageStone, SpeedStone, p);
                 break;
-//            case COPPER:
+//            case COPPER: // copper isn't a tier in vanilla (make my own tier?)
 //                item = new SwordItem(t, DamageCopper, SpeedCopper, p);
 //                break;
             case IRON:
