@@ -11,22 +11,24 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
+
+
     //region spear values
-    private static final int DamageWood = 1;
-    private static final int DamageStone = 2;
-    private static final int DamageCopper = 3;
-    private static final int DamageIron = 4;
+    private static final int DamageWood = 4;
+    private static final int DamageStone = 4;
+    private static final int DamageCopper = 5;
     private static final int DamageGold = 5;
+    private static final int DamageIron = 5;
     private static final int DamageDiamond = 6;
     private static final int DamageNetherite = 7;
 
-    private static final int SpeedWood = 1;
-    private static final int SpeedStone = 1;
-    private static final int SpeedCopper = 1;
-    private static final int SpeedIron = 1;
-    private static final int SpeedGold = 1;
-    private static final int SpeedDiamond = 1;
-    private static final int SpeedNetherite = 1;
+    private static final float SpeedWood = -2.4f;
+    private static final float  SpeedStone = -2.5f;
+    private static final float  SpeedCopper = -2.6f;
+    private static final float  SpeedIron = -2.7f;
+    private static final float  SpeedGold = -2.8f;
+    private static final float  SpeedDiamond = -2.9f;
+    private static final float  SpeedNetherite = -3f;
     //endregion
 
     //region register spear items
